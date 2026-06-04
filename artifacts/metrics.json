@@ -1,0 +1,9 @@
+{
+  "accuracy": 0.9474,
+  "f1": 0.9583,
+  "roc_auc": 0.9937,
+  "cv_roc_auc_mean": 0.9921,
+  "cv_roc_auc_std": 0.0057,
+  "n_train": 455,
+  "n_test": 114
+}

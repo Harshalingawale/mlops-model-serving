@@ -8,8 +8,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements.txt pytest-cov
       - name: Train model
         run: python -m src.train
       - name: Run tests
-        run: pytest -q
+        run: pytest -q --cov=. --cov-report=term-missing

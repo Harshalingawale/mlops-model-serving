@@ -3,6 +3,8 @@
 > End-to-end machine-learning service: **train → evaluate → version → serve → containerize → test in CI**. A clean reference for taking a model from notebook to production API.
 
 <p align="left">
+  <img src="https://github.com/Harshalingawale/mlops-model-serving/actions/workflows/ci.yml/badge.svg" alt="CI" />
+  <a href="https://github.com/Harshalingawale/mlops-model-serving/pkgs/container/mlops-model-serving"><img src="https://img.shields.io/badge/ghcr.io-image-2496ED?logo=docker&logoColor=white" alt="GHCR" /></a>
   <img src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/scikit--learn-ML-F7931E?logo=scikit-learn&logoColor=white" />
   <img src="https://img.shields.io/badge/FastAPI-Serving-009688?logo=fastapi&logoColor=white" />

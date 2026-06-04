@@ -1,4 +1,4 @@
-# 🚀 MLOps Model Serving
+#  MLOps Model Serving
 
 > End-to-end machine-learning service: **train → evaluate → version → serve → containerize → test in CI**. A clean reference for taking a model from notebook to production API.
 
@@ -14,13 +14,13 @@
 
 ---
 
-## 📌 What this demonstrates
+##  What this demonstrates
 
 Most ML tutorials stop at `model.fit()`. This repo shows the part employers actually care about: **operationalizing** a model. It trains a classifier inside a reproducible `Pipeline`, serializes it with metrics and feature contract, serves predictions behind a typed FastAPI, ships in Docker, and is verified by an automated test suite running in GitHub Actions.
 
 > Verified results on the built-in dataset: **ROC-AUC 0.994**, 5-fold CV AUC 0.992 ± 0.006, F1 0.958.
 
-## 🧱 Pipeline
+##  Pipeline
 
 ```
  src/train.py                         src/serve.py
@@ -35,7 +35,7 @@ Most ML tutorials stop at `model.fit()`. This repo shows the part employers actu
         └────────────── pytest + GitHub Actions CI ───────────┘
 ```
 
-## ⚡ Quickstart
+##  Quickstart
 
 ```bash
 git clone https://github.com/harshalingawale/mlops-model-serving.git
@@ -60,7 +60,7 @@ curl -X POST localhost:8000/predict \
 # → {"prediction": 0, "probability": 0.12}
 ```
 
-## 🔌 Endpoints
+##  Endpoints
 
 | Method | Path | Purpose |
 |---|---|---|
@@ -69,13 +69,13 @@ curl -X POST localhost:8000/predict \
 | `GET` | `/features` | Feature names + count (the input contract) |
 | `POST`| `/predict` | Class prediction + probability |
 
-## 🐳 Docker
+##  Docker
 
 ```bash
 make docker     # builds the image, trains inside it, serves on :8000
 ```
 
-## 🧪 Tests & CI
+##  Tests & CI
 
 ```bash
 make test
@@ -83,7 +83,7 @@ make test
 
 Every push runs `python -m src.train` then `pytest` on GitHub Actions, asserting the model still clears an AUC threshold — a lightweight **model-quality gate**.
 
-## 🗂️ Structure
+##  Structure
 
 ```
 mlops-model-serving/
@@ -96,21 +96,21 @@ mlops-model-serving/
 └── .github/workflows/ci.yml
 ```
 
-## 🔁 Use your own data
+##  Use your own data
 
 Swap `load_data()` in `src/train.py` to read your CSV (`pd.read_csv(...)`, return `X, y, feature_names`). Everything downstream — serving, contract checks, CI — keeps working.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 **Python · scikit-learn · FastAPI · Pydantic · joblib · Docker · GitHub Actions · pytest**
 
-## 📈 Roadmap
+##  Roadmap
 
 - [ ] MLflow experiment tracking + model registry
 - [ ] Prometheus metrics + Grafana dashboard
 - [ ] Data/prediction drift monitoring
 - [ ] Blue-green deploy via GitHub Actions
 
-## 📝 License
+##  License
 
 MIT © [Harshal Ingawale](https://github.com/harshalingawale)

@@ -4,3 +4,9 @@ venv/
 .venv/
 .DS_Store
 artifacts/*.joblib
+
+# coverage / pytest artifacts
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
